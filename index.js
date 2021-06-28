@@ -15,7 +15,7 @@ const order = require('./routes/order');
 const login = require('./routes/auth');
 const User = require('./modules/user');
 
-const MONGO_URI = 'mongodb+srv://Nomids:56P8kjLDuDMoXYWG@cluster0.gktgb.mongodb.net/courses'
+const { MONGO_URI } = require('./mongo')
 
 const app = express();
 const hbs = exphbs.create({
