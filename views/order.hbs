@@ -1,0 +1,19 @@
+<h2 class="mt-3">Order</h2>
+
+<div class="row">
+    {{#each orders}}
+    <div class="card col-3 mr-1">
+        <div class="card-body">
+            <h5 class="card-title">{{price}} RUB</h5>
+            <p class="date">{{date}}</p>
+            <ol>
+                {{#each courses}}
+                <li>
+                    {{course.title}} <span>(x{{count}})</span>
+                </li>
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+    {{/each}}
+</div>

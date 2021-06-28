@@ -1,0 +1,29 @@
+<h1 class="mt-5 mb-5">Courses</h1>
+{{#if courses.length}}
+
+<div class="row" style="flex-wrap: wrap;">
+    {{#each courses}}
+    <div class="card col-3">
+        <img src="{{img}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <a href="/courses/{{id}}" class="card-title">{{title}}</a>
+            <p>{{userId.name}}</p>
+            <h3>{{price}} RUB</h3>
+
+            {{#if @root.isAuth}}
+                <div class="d-flex mt-3">
+                    <a type="button" href="/courses/{{id}}/edit" class="btn btn-primary mr-2">Edit</a>
+                    <form method="POST" action="/cart/add">
+                        <input type="hidden" name="id" value="{{id}}">
+                        <button class="btn btn-danger" type="submit">Add Cart</button>
+                    </form>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+{{else}}
+<strong>Здесь пока нет курсов</strong>
+{{/if}}

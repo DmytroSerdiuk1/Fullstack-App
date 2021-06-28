@@ -1,0 +1,30 @@
+<div class="mt-5 mb-3 d-flex justify-content-between">
+    <h1>Cart</h1>
+    <h2 class="price">
+      {{price}}
+    </h2>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Course name</th>
+      <th scope="col">Num</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody class="tables">
+    {{#each cart}}
+        <tr>
+            <td>{{title}}</td>
+            <td>{{count}}</td>
+            <td>
+                <button data-id="{{id}}" type="button" class="button-delete-cart btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<form action="/order" method="POST">
+  <button type="submit" class="btn btn-danger">To order</button>
+</form>
